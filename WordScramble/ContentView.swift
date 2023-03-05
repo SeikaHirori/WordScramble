@@ -38,24 +38,30 @@ struct Part_1_Overview: View {
     @Binding var hello_world:String
     
     var body: some View {
-        List {
-            Section("Section 1") {
-                Text("Hello Mail")
-                Text("Hello bob")
-            }
+        VStack {
+//            List {
+//                Section("Section 1") {
+//                    Text("Hello Mail")
+//                    Text("Hello bob")
+//                }
+//
+//                Section ("Section 2") {
+//                    ForEach(1..<4) {
+//                        Text("Hello new person #\($0) :3")
+//                    }
+//                }
+//
+//                Section("Section 3") {
+//                    Text("Bye Mail")
+//                    Text("Bye everyone :3")
+//                }
+//            }
+//            .padding()
+//            .listStyle(.grouped)
             
-            Section ("Section 2") {
-                ForEach(1..<4) {
-                    Text("Hello new person #\($0) :3")
-                }
-            }
-            
-            Section("Section 3") {
-                Text("Bye Mail")
-                Text("Bye everyone :3")
+            List(0..<5) {
+                Text("That is step \($0)")
             }
         }
-        .padding()
-        .listStyle(.grouped)
     }
 }
