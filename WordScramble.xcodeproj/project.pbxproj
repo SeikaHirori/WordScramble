@@ -44,6 +44,7 @@
 		3F3088C029B5530200ED0021 /* WordScrambleUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = WordScrambleUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		3F3088C429B5530200ED0021 /* WordScrambleUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WordScrambleUITests.swift; sourceTree = "<group>"; };
 		3F3088C629B5530200ED0021 /* WordScrambleUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WordScrambleUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		3F3088D429B5589100ED0021 /* _docs */ = {isa = PBXFileReference; lastKnownFileType = folder; path = _docs; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -74,6 +75,7 @@
 		3F30889D29B552FE00ED0021 = {
 			isa = PBXGroup;
 			children = (
+				3F3088D429B5589100ED0021 /* _docs */,
 				3F3088A829B552FE00ED0021 /* WordScramble */,
 				3F3088B929B5530200ED0021 /* WordScrambleTests */,
 				3F3088C329B5530200ED0021 /* WordScrambleUITests */,
