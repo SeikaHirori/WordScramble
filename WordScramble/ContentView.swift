@@ -12,7 +12,6 @@ struct ContentView: View {
     
     var body: some View {
         Part_1_Overview(hello_world: $helloWorld)
-        Part_2_Implementation()
     }
 }
 
@@ -39,11 +38,10 @@ struct Part_1_Overview: View {
     @Binding var hello_world:String
     
     var body: some View {
-        VStack {
-            Image(systemName: "globe")
-                .imageScale(.large)
-                .foregroundColor(.accentColor)
-            Text(hello_world)
+        List {
+            ForEach(1..<4) {
+                Text("Hello person #\($0) :3")
+            }
         }
         .padding()
     }
