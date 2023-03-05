@@ -39,9 +39,15 @@ struct Part_1_Overview: View {
     
     var body: some View {
         List {
+            Text("Hello Mail")
+            Text("Hello bob")
+            
             ForEach(1..<4) {
-                Text("Hello person #\($0) :3")
+                Text("Hello new person #\($0) :3")
             }
+            
+            Text("Bye Mail")
+            Text("Bye everyone :3ç")
         }
         .padding()
     }
