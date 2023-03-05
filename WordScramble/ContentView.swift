@@ -56,5 +56,6 @@ struct Part_1_Overview: View {
             }
         }
         .padding()
+        .listStyle(.grouped)
     }
 }
