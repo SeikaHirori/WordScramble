@@ -52,4 +52,8 @@ struct Part_1_Overview: View {
             Text("Bottom Static Row")
         }
     }
+    
+    func example_Grab_file() -> () {
+        if let fileURL = Bundle.main.url(forResource: "some-file", withExtension: "txt")
+    }
 }
