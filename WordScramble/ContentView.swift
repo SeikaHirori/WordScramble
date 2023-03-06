@@ -37,31 +37,12 @@ struct Part_2_Implementation: View {
 struct Part_1_Overview: View {
     @Binding var hello_world:String
     
+    let people:[String] = ["Finn", "Leia", "Luke", "Rey"]
+    
     var body: some View {
-        VStack {
-//            List {
-//                Section("Section 1") {
-//                    Text("Hello Mail")
-//                    Text("Hello bob")
-//                }
-//
-//                Section ("Section 2") {
-//                    ForEach(1..<4) {
-//                        Text("Hello new person #\($0) :3")
-//                    }
-//                }
-//
-//                Section("Section 3") {
-//                    Text("Bye Mail")
-//                    Text("Bye everyone :3")
-//                }
-//            }
-//            .padding()
-//            .listStyle(.grouped)
-            
-            List(0..<5) {
-                Text("That is step \($0)")
-            }
+        
+        List (people, id: \.self) { item in
+            Text(item)
         }
     }
 }
