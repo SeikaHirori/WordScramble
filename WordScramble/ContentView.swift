@@ -16,13 +16,18 @@ struct ContentView: View {
     @State var errorMessage: String = ""
     @State var showingError: Bool = false
     
+    @State private var counter_Words: Int = 0
+    @State private var counter_Letters: Int = 0
+    
     var body: some View {
         Part_2_Implementation(usedWords: $usedWords,
                               rootWord: $rootWord,
                               newWord: $newWord,
                               errorTitle: $errorTitle,
                               errorMessage: $errorMessage,
-                              showingError: $showingError
+                              showingError: $showingError,
+                              counter_Words: $counter_Words,
+                              counter_Letters: $counter_Letters
         )
     }
 }
@@ -44,16 +49,38 @@ struct Part_2_Implementation: View {
     @Binding var errorMessage: String
     @Binding var showingError: Bool
     
+    // Challenge #3
+    // Score Counter
+    @Binding var counter_Words: Int
+    @Binding var counter_Letters: Int
+    
     // Debugging
     @State var counter_changes:Int = 0
     
     var body: some View {
         NavigationView {
             List {
+                
+                // Challenge #3
+                Section("Score of") {
+                    HStack(alignment: .center) {
+                        Text("Valid words:")
+                        Spacer()
+                        Text("\(counter_Words)")
+                    }
+                    
+                    HStack(alignment: .center) {
+                        Text("Letter count:")
+                        Spacer()
+                        Text(" \(counter_Letters)")
+                    }
+                }
+                
                 Section {
                     TextField("Enter your word", text: $newWord)
                         .textInputAutocapitalization(.never)
                 }
+                .padding()
                 
                 Section {
                     ForEach(usedWords, id: \.self) { word in
@@ -80,8 +107,7 @@ struct Part_2_Implementation: View {
             .toolbar {
                 Button("New word :3", action: newGameSession)
                     .newWord()
-
-        }
+            }
         }
         .onChange(of: usedWords) { _ in
             debug_Print_Properties()}
@@ -121,6 +147,11 @@ struct Part_2_Implementation: View {
             usedWords.insert(answer, at: 0)
         }
         newWord = ""
+        
+        // Challenge #3
+        counter_Words += 1
+        counter_Letters += answer.count
+        
     }
     
     
@@ -150,7 +181,12 @@ struct Part_2_Implementation: View {
     // Challenge #2
     func newGameSession() {
         startGame()
+        
+        // Challenge #3
+        // Reset properties
         usedWords = []
+        counter_Words = 0
+        counter_Letters = 0
         
     }
     
