@@ -50,6 +50,8 @@ struct Part_1_Overview: View {
             }
             
             Text("Bottom Static Row")
+            
+            Text(wordTime())
         }
     }
     
@@ -60,7 +62,13 @@ struct Part_1_Overview: View {
                 // we loaded the file into a string!
             }
         }
-        
-        
     }
+    
+    func wordTime() -> String {
+        let input = "a b c"
+        let letters = input.components(separatedBy: " ")
+        
+        return letters.randomElement() ?? ":3"
+    }
+    
 }
