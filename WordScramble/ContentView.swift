@@ -38,9 +38,7 @@ struct Part_2_Implementation: View {
             List {
                 Section {
                     TextField("Enter your word", text: $newWord)
-                        .onSubmit {
-                            addNewWord()
-                        }
+                        .textInputAutocapitalization(.never)
                 }
                 
                 Section {
@@ -50,6 +48,9 @@ struct Part_2_Implementation: View {
                 }
             }
             .navigationTitle(rootWord)
+            .onSubmit {
+                addNewWord()
+            }
         }
         .onChange(of: usedWords) { _ in
             debug_Print_Properties()}
