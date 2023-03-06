@@ -54,6 +54,9 @@ struct Part_2_Implementation: View {
             .onSubmit {
                 addNewWord()
             }
+            .onAppear() {
+                startGame()
+            }
         }
         .onChange(of: usedWords) { _ in
             debug_Print_Properties()}

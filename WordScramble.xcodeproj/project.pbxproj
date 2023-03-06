@@ -14,6 +14,7 @@
 		3F3088BB29B5530200ED0021 /* WordScrambleTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F3088BA29B5530200ED0021 /* WordScrambleTests.swift */; };
 		3F3088C529B5530200ED0021 /* WordScrambleUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F3088C429B5530200ED0021 /* WordScrambleUITests.swift */; };
 		3F3088C729B5530200ED0021 /* WordScrambleUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F3088C629B5530200ED0021 /* WordScrambleUITestsLaunchTests.swift */; };
+		3F3088D929B6835900ED0021 /* start.txt in Resources */ = {isa = PBXBuildFile; fileRef = 3F3088D829B6835900ED0021 /* start.txt */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -45,7 +46,7 @@
 		3F3088C429B5530200ED0021 /* WordScrambleUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WordScrambleUITests.swift; sourceTree = "<group>"; };
 		3F3088C629B5530200ED0021 /* WordScrambleUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WordScrambleUITestsLaunchTests.swift; sourceTree = "<group>"; };
 		3F3088D429B5589100ED0021 /* _docs */ = {isa = PBXFileReference; lastKnownFileType = folder; path = _docs; sourceTree = "<group>"; };
-		3F3088D529B67EA100ED0021 /* start.txt */ = {isa = PBXFileReference; lastKnownFileType = text; path = start.txt; sourceTree = SOURCE_ROOT; };
+		3F3088D829B6835900ED0021 /* start.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = start.txt; sourceTree = SOURCE_ROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -76,7 +77,6 @@
 		3F30889D29B552FE00ED0021 = {
 			isa = PBXGroup;
 			children = (
-				3F3088D529B67EA100ED0021 /* start.txt */,
 				3F3088D429B5589100ED0021 /* _docs */,
 				3F3088A829B552FE00ED0021 /* WordScramble */,
 				3F3088B929B5530200ED0021 /* WordScrambleTests */,
@@ -98,6 +98,7 @@
 		3F3088A829B552FE00ED0021 /* WordScramble */ = {
 			isa = PBXGroup;
 			children = (
+				3F3088D829B6835900ED0021 /* start.txt */,
 				3F3088A929B552FE00ED0021 /* WordScrambleApp.swift */,
 				3F3088AB29B552FE00ED0021 /* ContentView.swift */,
 				3F3088AD29B5530100ED0021 /* Assets.xcassets */,
@@ -236,6 +237,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				3F3088B129B5530100ED0021 /* Preview Assets.xcassets in Resources */,
+				3F3088D929B6835900ED0021 /* start.txt in Resources */,
 				3F3088AE29B5530100ED0021 /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
