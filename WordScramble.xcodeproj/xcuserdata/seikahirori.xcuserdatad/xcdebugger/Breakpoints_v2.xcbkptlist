@@ -14,10 +14,10 @@
             filePath = "WordScramble/ContentView.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "105"
-            endingLineNumber = "105"
-            landmarkName = "Part_1_Overview"
-            landmarkType = "14">
+            startingLineNumber = "123"
+            endingLineNumber = "123"
+            landmarkName = "hello_world"
+            landmarkType = "24">
          </BreakpointContent>
       </BreakpointProxy>
    </Breakpoints>
