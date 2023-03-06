@@ -25,8 +25,8 @@ ______
 
 
 - Part 2 | Implementation: https://www.hackingwithswift.com/100/swiftui/30
-    - [ ] 1. Adding to a list of words
             - WIP
+    - [ ] 1. Adding to a list of words
     - [ ] 2. Running code when our app launches
     - [ ] 3. Validating words with UITextChecker
 

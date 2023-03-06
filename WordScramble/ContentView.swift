@@ -31,11 +31,16 @@ struct Part_2_Implementation: View {
     @Binding var rootWord: String
     @Binding var newWord: String
     
+    @State var counter_changes:Int = 0
+    
     var body: some View {
         NavigationView {
             List {
                 Section {
                     TextField("Enter your word", text: $newWord)
+                        .onSubmit {
+                            addNewWord()
+                        }
                 }
                 
                 Section {
@@ -55,7 +60,18 @@ struct Part_2_Implementation: View {
         .onChange(of: newWord) { _ in
             debug_Print_Properties()
         }
-
+    }
+    
+    func addNewWord() {
+        // lowercase and trim the word, to make sure we don't add duplicate words with case differences
+        let answer = newWord.lowercased().trimmingCharacters(in: .whitespacesAndNewlines)
+        
+        // exit if the remaining string is empty
+        guard answer.count > 0 else {return}
+        
+        // extra validation to come
+        usedWords.insert(answer, at: 0)
+        newWord = ""
     }
     
     
@@ -64,16 +80,16 @@ struct Part_2_Implementation: View {
     
     
     
-    
-    
     func debug_Print_Properties() {
+        counter_changes += 1
         let output_changes:String = """
         Something changed with the properties! Let's see :3
+        Change counter: \(counter_changes)
+        
         
         usedWords: \(usedWords)
         rootWord: \(rootWord)
         newWord: \(newWord)
-        
         ---------- :3 ----------
         """
         print(output_changes)
