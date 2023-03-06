@@ -76,9 +76,9 @@ struct Part_2_Implementation: View {
             } message: {
                 Text(errorMessage)
             }
-            // This is personal experiment to generation new word :3
+            // Challenge #2
             .toolbar {
-                Button("New word :3", action: startGame)
+                Button("New word :3", action: newGameSession)
                     .newWord()
 
         }
@@ -147,6 +147,12 @@ struct Part_2_Implementation: View {
         fatalError(errorMessage)
     }
     
+    // Challenge #2
+    func newGameSession() {
+        startGame()
+        usedWords = []
+        
+    }
     
     
     func isOriginal(word: String) -> Bool {
