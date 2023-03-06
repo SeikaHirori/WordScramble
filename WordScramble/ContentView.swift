@@ -8,10 +8,14 @@
 import SwiftUI
 
 struct ContentView: View {
-    @State private var helloWorld:String = "Hello world. Part 1 :3"
+    @State private var usedWords = [String]()
+    @State private var rootWord: String = ""
+    @State private var newWord: String = ""
     
     var body: some View {
-        Part_1_Overview(hello_world: $helloWorld)
+        Part_2_Implementation(usedWords: $usedWords,
+                              rootWord: $rootWord,
+                              newWord: $newWord)
     }
 }
 
@@ -22,6 +26,10 @@ struct ContentView_Previews: PreviewProvider {
 }
 
 struct Part_2_Implementation: View {
+    @Binding var usedWords: [String]
+    @Binding var rootWord: String
+    @Binding var newWord: String
+    
     var body: some View {
         VStack {
             Image(systemName: "globe")
