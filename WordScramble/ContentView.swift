@@ -12,10 +12,18 @@ struct ContentView: View {
     @State private var rootWord: String = ""
     @State private var newWord: String = ""
     
+    @State var errorTitle: String = ""
+    @State var errorMessage: String = ""
+    @State var showingError: Bool = false
+    
     var body: some View {
         Part_2_Implementation(usedWords: $usedWords,
                               rootWord: $rootWord,
-                              newWord: $newWord)
+                              newWord: $newWord,
+                              errorTitle: $errorTitle,
+                              errorMessage: $errorMessage,
+                              showingError: $showingError
+        )
     }
 }
 
@@ -31,6 +39,12 @@ struct Part_2_Implementation: View {
     @Binding var rootWord: String
     @Binding var newWord: String
     
+    // Show error messages
+    @Binding var errorTitle: String
+    @Binding var errorMessage: String
+    @Binding var showingError: Bool
+    
+    // Debugging
     @State var counter_changes:Int = 0
     
     var body: some View {
@@ -56,6 +70,11 @@ struct Part_2_Implementation: View {
             }
             .onAppear() {
                 startGame()
+            }
+            .alert(errorTitle, isPresented: $showingError) {
+                Button("OK", role: .cancel) { }
+            } message: {
+                Text(errorMessage)
             }
         }
         .onChange(of: usedWords) { _ in
@@ -99,7 +118,6 @@ struct Part_2_Implementation: View {
                 
                 // If we are here everything has worked, so we can exit
                 return
-                
             }
         }
         
@@ -139,8 +157,15 @@ struct Part_2_Implementation: View {
         return output
     }
     
+    func wordError(title: String, message: String) {
+        errorTitle = title
+        errorMessage = message
+        showingError = true
+    }
+    
 >>>>>>> d381ef7 (created funcs:)
     
+    // Debugging only
     func debug_Print_Properties() {
         counter_changes += 1
         let output_changes:String = """
