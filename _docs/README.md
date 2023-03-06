@@ -20,13 +20,13 @@ ______
     - [x] 1. Word Scramble: Introduction
     - [x] 2. Introducing List, your best friend
     - [x] 3. Loading resources from your app bundle
-    - [ ] 4. Working with strings
-        - WIP
+    - [x] 4. Working with strings
 
 
 
 - Part 2 | Implementation: https://www.hackingwithswift.com/100/swiftui/30
     - [ ] 1. Adding to a list of words
+            - WIP
     - [ ] 2. Running code when our app launches
     - [ ] 3. Validating words with UITextChecker
 

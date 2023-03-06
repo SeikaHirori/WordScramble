@@ -42,16 +42,25 @@ struct Part_1_Overview: View {
     var body: some View {
         
         List {
+            Section("List Time :D"){
             
-            Text("Top Static Row")
-            
-            ForEach (people, id: \.self) { item in
-                Text(item)
+                Text("Top Static Row")
+                
+                ForEach (people, id: \.self) { item in
+                    Text(item)
+                }
+                
+                Text("Bottom Static Row")
             }
             
-            Text("Bottom Static Row")
+            Section("Word Time :O") {
+                Text(wordTime())
+                
+            }
             
-            Text(wordTime())
+            Section("Speeling time, G00d?") {
+                Text(using_UIKit_time())
+            }
         }
     }
     
@@ -80,7 +89,7 @@ struct Part_1_Overview: View {
         return output
     }
     
-    func using_UIKit_time() {
+    func using_UIKit_time() -> String {
         
         // Step #1
         let word:String = "Swift"
@@ -91,6 +100,17 @@ struct Part_1_Overview: View {
         let range = NSRange(location: 0, length: word.utf16.count)
         
         // Step #3
+        let misspelledRange = checker.rangeOfMisspelledWord(in: word, range: range, startingAt: 0, wrap: false, language: "en")
         
+        var allGood:Bool {
+            misspelledRange.location == NSNotFound
+        }
+        
+        switch allGood {
+        case true:
+            return "GOOD TO GO!"
+        case false:
+            return "ripp :'("
+        }
     }
 }
