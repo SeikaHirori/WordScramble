@@ -18,9 +18,9 @@ ______
 
 - Part 1 | Overview: https://www.hackingwithswift.com/100/swiftui/29
     - [x] 1. Word Scramble: Introduction
-    - [ ] 2. Introducing List, your best friend
-            - WIP
+    - [x] 2. Introducing List, your best friend
     - [ ] 3. Loading resources from your app bundle
+                - WIP
     - [ ] 4. Working with strings
 
 
