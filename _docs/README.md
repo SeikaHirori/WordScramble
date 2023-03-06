@@ -26,9 +26,10 @@ ______
 
 - Part 2 | Implementation: https://www.hackingwithswift.com/100/swiftui/30
     - [x] 1. Adding to a list of words
-    - [ ] 2. Running code when our app launches
-        - WIP
+    - [x] 2. Running code when our app launches
     - [ ] 3. Validating words with UITextChecker
+        - WIP
+
 
     
 - Part 3 | Challenge: https://www.hackingwithswift.com/100/swiftui/31
