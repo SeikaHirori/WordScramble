@@ -79,6 +79,7 @@ struct Part_2_Implementation: View {
             // This is personal experiment to generation new word :3
             .toolbar {
                 Button("New word :3", action: startGame)
+                    .newWord()
 
         }
         }
@@ -166,8 +167,6 @@ struct Part_2_Implementation: View {
         return true
     }
     
-<<<<<<< HEAD
-=======
     func isReal(word: String) -> Bool {
         let checker:UITextChecker = UITextChecker()
         let range:NSRange = NSRange(location: 0, length: word.utf16.count)
@@ -183,7 +182,6 @@ struct Part_2_Implementation: View {
         showingError = true
     }
     
->>>>>>> d381ef7 (created funcs:)
     
     // Debugging only
     func debug_Print_Properties() {
@@ -280,5 +278,22 @@ struct Part_1_Overview: View {
         case false:
             return "ripp :'("
         }
+    }
+}
+
+extension View {
+    func newWord() -> some View {
+        modifier(New_Word())
+    }
+}
+
+struct New_Word: ViewModifier {
+    func body(content: Content) -> some View {
+        content
+            
+            .padding(5)
+            .background(Color.white)
+            .foregroundColor(Color.primary)
+            .clipShape(Capsule())
     }
 }
