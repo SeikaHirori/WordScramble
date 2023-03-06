@@ -81,10 +81,16 @@ struct Part_1_Overview: View {
     }
     
     func using_UIKit_time() {
+        
+        // Step #1
         let word:String = "Swift"
         let checker:UITextChecker = UITextChecker()
         
+        // Step #2
         // This is a bridge between Swift and Objective-C as Objective-C will understand how Swift handles strings
         let range = NSRange(location: 0, length: word.utf16.count)
+        
+        // Step #3
+        
     }
 }
