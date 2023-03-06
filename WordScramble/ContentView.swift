@@ -41,8 +41,15 @@ struct Part_1_Overview: View {
     
     var body: some View {
         
-        List (people, id: \.self) { item in
-            Text(item)
+        List {
+            
+            Text("Top Static Row")
+            
+            ForEach (people, id: \.self) { item in
+                Text(item)
+            }
+            
+            Text("Bottom Static Row")
         }
     }
 }
