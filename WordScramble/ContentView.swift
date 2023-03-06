@@ -31,14 +31,51 @@ struct Part_2_Implementation: View {
     @Binding var newWord: String
     
     var body: some View {
-        VStack {
-            Image(systemName: "globe")
-                .imageScale(.large)
-                .foregroundColor(.accentColor)
-            Text("Hello, world! Part 2 :3")
+        NavigationView {
+            List {
+                Section {
+                    TextField("Enter your word", text: $newWord)
+                }
+                
+                Section {
+                    ForEach(usedWords, id: \.self) { word in
+                        Text(word)
+                    }
+                }
+            }
+            .navigationTitle(rootWord)
         }
-        .padding()
+        .onChange(of: usedWords) { _ in
+            debug_Print_Properties()}
+        
+        .onChange(of: rootWord) { _ in
+            debug_Print_Properties()
+        }
+        .onChange(of: newWord) { _ in
+            debug_Print_Properties()
+        }
 
+    }
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    func debug_Print_Properties() {
+        let output_changes:String = """
+        Something changed with the properties! Let's see :3
+        
+        usedWords: \(usedWords)
+        rootWord: \(rootWord)
+        newWord: \(newWord)
+        
+        ---------- :3 ----------
+        """
+        print(output_changes)
     }
 }
 
