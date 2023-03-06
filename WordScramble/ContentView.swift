@@ -65,10 +65,19 @@ struct Part_1_Overview: View {
     }
     
     func wordTime() -> String {
-        let input = "a b c"
-        let letters = input.components(separatedBy: " ")
+        var output:String
         
-        return letters.randomElement() ?? ":3"
+        let input = " a b c "
+        let letters_removed_WhiteSpaces = input.trimmingCharacters(in: .whitespacesAndNewlines).components(separatedBy: " ")
+        
+        
+        let letter = letters_removed_WhiteSpaces.randomElement()
+        let trimmed = letter?.trimmingCharacters(in: .whitespacesAndNewlines)
+        
+        output = trimmed!
+    
+        
+        return output
     }
     
 }
