@@ -80,4 +80,10 @@ struct Part_1_Overview: View {
         return output
     }
     
+    func using_UIKit_time() {
+        let word:String = "Swift"
+        let checker:UITextChecker = UITextChecker()
+        
+        
+    }
 }
