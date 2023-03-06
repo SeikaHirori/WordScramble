@@ -99,6 +99,10 @@ struct Part_2_Implementation: View {
                 
             }
         }
+        
+        // If were are *here* then there was a problem – trigger a crash and report the error
+        let errorMessage: String = "Could not load start.txt from bundle"
+        fatalError(errorMessage)
     }
     
     
