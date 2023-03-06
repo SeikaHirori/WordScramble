@@ -43,7 +43,10 @@ struct Part_2_Implementation: View {
                 
                 Section {
                     ForEach(usedWords, id: \.self) { word in
-                        Text(word)
+                        HStack {
+                            Image(systemName: "\(word.count).circle")
+                            Text(word)
+                        }
                     }
                 }
             }
@@ -71,7 +74,9 @@ struct Part_2_Implementation: View {
         guard answer.count > 0 else {return}
         
         // extra validation to come
-        usedWords.insert(answer, at: 0)
+        withAnimation {
+            usedWords.insert(answer, at: 0)
+        }
         newWord = ""
     }
     
