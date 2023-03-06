@@ -54,6 +54,8 @@ struct Part_1_Overview: View {
     }
     
     func example_Grab_file() -> () {
-        if let fileURL = Bundle.main.url(forResource: "some-file", withExtension: "txt")
+        if let fileURL = Bundle.main.url(forResource: "some-file", withExtension: "txt") {
+            // we found the file in our bundle!
+        }
     }
 }
