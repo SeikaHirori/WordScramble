@@ -76,6 +76,11 @@ struct Part_2_Implementation: View {
             } message: {
                 Text(errorMessage)
             }
+            // This is personal experiment to generation new word :3
+            .toolbar {
+                Button("New word :3", action: startGame)
+
+        }
         }
         .onChange(of: usedWords) { _ in
             debug_Print_Properties()}
@@ -96,6 +101,21 @@ struct Part_2_Implementation: View {
         guard answer.count > 0 else {return}
         
         // extra validation to come
+        guard isOriginal(word: answer) else {
+            wordError(title: "Word used already", message: "Be more original :'[")
+            return
+        }
+        
+        guard isPossible(word: answer) else {
+            wordError(title: "Word not possible", message: "You can't spell that word from '\(rootWord)'!")
+            return
+        }
+        
+        guard isReal(word: answer) else {
+            wordError(title: "Word is not recognized", message: "You can't make  them up >:[")
+            return
+        }
+        
         withAnimation {
             usedWords.insert(answer, at: 0)
         }
