@@ -32,8 +32,7 @@ ______
 
     
 - Part 3 | Challenge: https://www.hackingwithswift.com/100/swiftui/31
-    - [ ] 1. Disallow answers that are shorter than three letters or are just our start word.
-            - WIP
+    - [x] 1. Disallow answers that are shorter than three letters or are just our start word.
     - [x] 2. Add a toolbar button that calls startGame(), so users can restart with a new word whenever they want to.
         - Note:
             - I already implemented this at commit **92895ca** ... whoa, I was curious enough (and annoyed that I couldn't manually get a new word) that I was already already :3

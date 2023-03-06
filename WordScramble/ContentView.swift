@@ -128,6 +128,19 @@ struct Part_2_Implementation: View {
         guard answer.count > 0 else {return}
         
         // extra validation to come
+        
+        // Challenge #1
+        guard isLessThanOrEqualTo_3_Letters(word: answer) else {
+            wordError(title: "Word is too short", message: "Needs to be more than 3 letters :'[")
+            return
+        }
+        
+        // Challenge #1
+        guard isSameAsRootWord(word: answer) else {
+            wordError(title: "Same word!", message: "It can't be the same as root word :'[")
+            return
+        }
+        
         guard isOriginal(word: answer) else {
             wordError(title: "Word used already", message: "Be more original :'[")
             return
@@ -217,6 +230,26 @@ struct Part_2_Implementation: View {
         let output: Bool = misspelledRange.location == NSNotFound
         return output
     }
+    
+    // Challenge #1
+    func isLessThanOrEqualTo_3_Letters(word: String) -> Bool {
+        let minimum_letter_count:Int = 4
+        
+        let word_count: Int = word.count
+        
+        if word_count < minimum_letter_count {
+            return false
+        }
+            
+        return true
+    }
+    
+    // Challenge #1
+    func isSameAsRootWord(word: String) -> Bool {
+        return word != rootWord
+    }
+    
+    
     
     func wordError(title: String, message: String) {
         errorTitle = title
