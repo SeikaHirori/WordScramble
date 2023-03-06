@@ -128,6 +128,18 @@ struct Part_2_Implementation: View {
         return true
     }
     
+<<<<<<< HEAD
+=======
+    func isReal(word: String) -> Bool {
+        let checker:UITextChecker = UITextChecker()
+        let range:NSRange = NSRange(location: 0, length: word.utf16.count)
+        let misspelledRange = checker.rangeOfMisspelledWord(in: word, range: range, startingAt: 0, wrap: false, language: "en")
+        
+        let output: Bool = misspelledRange.location == NSNotFound
+        return output
+    }
+    
+>>>>>>> d381ef7 (created funcs:)
     
     func debug_Print_Properties() {
         counter_changes += 1
