@@ -5,8 +5,8 @@
 
 Index for Checklist:
 
-    = TO-DO
-    = COMPLETED
+    [ ] = TO-DO
+    [x] = COMPLETED
 
 Examples of completing a part or section:
 
