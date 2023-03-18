@@ -1,4 +1,4 @@
-# Project 5: BetterRest
+# Project 5: Word Scramble
 
 
 ***House Keeping***
